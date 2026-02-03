@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поиск расписания - РАНХиГС</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f5f5f5; }
+        
+        .header {
+            background: linear-gradient(90deg, #1a3d6c 0%, #2c5282 100%);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .search-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #1a3d6c;
+            font-weight: bold;
+        }
+        
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #1a3d6c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        
+        .btn:hover { background: #2c5282; }
+        
+        .results {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .result-item {
+            padding: 15px;
+            border-left: 4px solid #1a3d6c;
+            background: #f9f9f9;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #666;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🔍 Поиск расписания</h1>
+        <p>Колледж РАНХиГС</p>
+    </div>
+
+    <div class="container">
+        <div class="search-form">
+            <h2 style="color: #1a3d6c; margin-bottom: 25px;">Найдите своё расписание</h2>
+            
+            <div class="form-group">
+                <label for="group">Группа:</label>
+                <select id="group">
+                    <option value="">Выберите группу</option>
+                    <option value="24исп6">24исп6</option>
+                    <option value="24исп5">24исп5</option>
+                    <option value="23исп4">23исп4</option>
+                    <option value="22исп3">22исп3</option>
+                    <option value="23тур1">23тур1</option>
+                    <option value="23тур2">23тур2</option>
+                    <option value="24тур1">24тур1</option>
+                    <option value="24тур2">24тур2</option>
+                    <option value="К-101">К-101</option>
+                    <option value="К-102">К-102</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="teacher">Преподаватель:</label>
+                <input type="text" id="teacher" placeholder="Введите фамилию преподавателя">
+            </div>
+
+            <div class="form-group">
+                <label for="classroom">Аудитория:</label>
+                <input type="text" id="classroom" placeholder="Номер аудитории">
+            </div>
+
+            <button class="btn" onclick="search()">НАЙТИ</button>
+            <button class="btn" style="background: #666;" onclick="clearSearch()">ОЧИСТИТЬ</button>
+        </div>
+
+        <div id="results" class="results">
+            <h3 style="color: #1a3d6c; margin-bottom: 15px;">Результаты поиска:</h3>
+            <div class="result-item">
+                <strong>01.01.2024</strong> | 9:00-10:30<br>
+                Группа: <strong>24исп6</strong><br>
+                Предмет: Информатика<br>
+                Преподаватель: Иванов А.П.<br>
+                Аудитория: 301
+            </div>
+            <div class="result-item">
+                <strong>02.02.2024</strong> | 9:00-10:30<br>
+                Группа: <strong>24исп6</strong><br>
+                Предмет: Web-разработка<br>
+                Преподаватель: Иванов А.П.<br>
+                Аудитория: 301
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="back-btn">← НА ГЛАВНУЮ</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 Расписание колледжа РАНХиГС</p>
+    </div>
+
+    <script>
+        function search() {
+            alert('Поиск выполнен! В реальном сайте здесь будет поиск по базе данных.');
+        }
+        
+        function clearSearch() {
+            document.getElementById('group').value = '';
+            document.getElementById('teacher').value = '';
+            document.getElementById('classroom').value = '';
+        }
+    </script>
+</body>
+</html>
